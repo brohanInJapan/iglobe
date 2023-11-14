@@ -14,7 +14,7 @@
   --fw-700: 700;
   --fw-900: 900;
 
-  --lh-200: 1.1;
+  --lh-200: 0.95;
   --lh-400: 1.4;
   --lh-600: 1.6;
 
@@ -73,12 +73,6 @@
 
   *::-webkit-scrollbar {
     display: none;
-  }
-
-  @media (min-width: 40em) {
-    --fs-500: 2rem;
-    --fs-700: 2.5rem;
-    --fs-900: 3.5rem;
   }
 }
 
@@ -180,7 +174,7 @@ body {
   background: var(--clr-primary-400);
   background: var(--gradient);
 
-  transition: 300ms;
+  transition: 350ms;
 }
 /* --- --- --- */
 
@@ -274,6 +268,7 @@ header {
   padding-inline: var(--gap-l);
   background-color: unset;
 
+  border-radius: var(--br);
   border: unset;
   outline: unset;
 }
@@ -299,11 +294,11 @@ header {
   border-radius: 0 0 var(--gap-m) var(--gap-m);
   margin-inline: auto;
 
-  transition: 3s;
+  transition: 350ms;
 }
 
 .hero {
-  min-height: 32rem;
+  min-height: 60rem;
 
   display: flex;
   align-items: center;
@@ -312,7 +307,7 @@ header {
   background-color: none;
 
   & .left {
-    width: 32rem;
+    width: 48rem;
     display: flex;
     flex-direction: column;
     gap: var(--gap-l);
@@ -321,7 +316,6 @@ header {
   & .right {
     display: flex;
     flex-direction: column;
-    gap: var(--gap-l);
   }
 }
 
