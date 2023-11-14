@@ -111,7 +111,8 @@ h4,
 p,
 dl,
 dd,
-figure {
+figure,
+a {
   margin: 0;
   padding: 0;
 }
@@ -168,6 +169,8 @@ body {
 
   background: var(--clr-primary-400);
   background: var(--gradient);
+
+  transition: 300ms;
 }
 
 /* --- --- --- */
@@ -175,6 +178,13 @@ body {
 .container {
   width: 100%;
   max-width: 1640px;
+  padding-inline: 6rem;
+}
+
+.inner-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 header {
@@ -186,15 +196,15 @@ header {
   box-shadow: var(--cast-shadow);
 
   & .container {
-    height: 6rem;
+    height: 4rem;
 
     display: grid;
-    grid-template-columns: 15rem 1fr 8.4375rem 3.5rem;
-    grid-template-areas: "logo nav bentley theme";
-
+    grid-template-columns: 10rem 1fr 8rem 3.5rem;
+    grid-template-rows: 4rem 1fr;
+    grid-template-areas:
+      "logo nav bentley theme"
+      "0 sub-menu 1 2";
     align-items: center;
-
-    padding-inline: 6rem;
   }
 
   & nav {
@@ -206,6 +216,7 @@ header {
     & ul {
       display: flex;
       flex-direction: row;
+      gap: var(--gap-m);
 
       > li {
         display: flex;
@@ -217,33 +228,17 @@ header {
     & .btn {
       margin-left: var(--gap-l);
     }
-
-    & a {
-      min-height: 6rem;
-      display: grid;
-      align-items: center;
-      padding-inline: var(--gap-xl);
-    }
-
-    & a:hover,
-    & a:focus {
-      background-color: var(--clr-primary-400);
-    }
-
-    & a:active {
-      background-color: var(--clr-primary-600);
-    }
   }
 }
 
 .logo {
   grid-area: logo;
-
   align-self: center;
 }
 
 .bentley {
   grid-area: bentley;
+  margin-inline: auto;
 }
 
 .theme-icon {
@@ -256,13 +251,43 @@ header {
   padding-inline: var(--gap-l);
 }
 
-.theme-icon:hover,
-.theme-icon:focus {
+.nav-item {
+  min-height: 4rem;
+  display: inline;
+  cursor: pointer;
+
+  color: var(--clr-secondary-200);
+  font-size: var(--fs-400);
+
+  padding-inline: var(--gap-l);
+  background-color: unset;
+
+  border: unset;
+  outline: unset;
+}
+
+.nav-item:hover,
+.nav-item.open {
   background-color: var(--clr-primary-400);
 }
 
-.theme-icon:active {
+& .nav-item:active {
   background-color: var(--clr-primary-600);
+}
+
+.sub-menu {
+  grid-area: sub-menu;
+
+  width: 100%;
+  min-height: 0;
+  display: flex;
+  justify-content: center;
+
+  background-color: var(--clr-neutral-200);
+  border-radius: 0 0 var(--gap-m) var(--gap-m);
+  margin-inline: auto;
+
+  transition: 3s;
 }
 
 .btn {
@@ -283,8 +308,7 @@ header {
   box-shadow: var(--shadow);
 }
 
-.btn:hover,
-.btn:focus {
+.btn:hover {
   background-color: var(--clr-blue-200);
 }
 

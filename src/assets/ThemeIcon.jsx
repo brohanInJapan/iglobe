@@ -1,6 +1,6 @@
 const ThemeIcon = ({ fill = "var(--clr-secondary-200)", onClick }) => {
   return (
-    <a className="theme-icon" href="#" onClick={() => onClick()}>
+    <button className="nav-item" href="#" onClick={() => onClick()}>
       <svg
         height="22.62"
         width="22.62"
@@ -13,7 +13,7 @@ const ThemeIcon = ({ fill = "var(--clr-secondary-200)", onClick }) => {
           transform="translate(-0.69 -0.69)"
         />
       </svg>
-    </a>
+    </button>
   );
 };
 

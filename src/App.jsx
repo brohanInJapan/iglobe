@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Logo from "./assets/Logo";
 import BentleyLogo from "./assets/BentleyLogo";
 import ThemeIcon from "./assets/ThemeIcon";
+import { debounce } from "debounce";
+import { Header, Nav, SubMenu } from "./Header";
 
 function App() {
   const [isDarkMode, setIsDarkmode] = useState(function () {
@@ -14,6 +16,11 @@ function App() {
     }
   });
 
+  function handleDarkModeToggle() {
+    setIsDarkmode(!isDarkMode);
+    localStorage.setItem("isDarkmode", JSON.stringify(!isDarkMode));
+  }
+
   useEffect(() => {
     if (isDarkMode === true) {
       document.body.classList.add("dark");
@@ -22,60 +29,53 @@ function App() {
     }
   }, [isDarkMode]);
 
-  function handleDarkModeToggle() {
-    setIsDarkmode(!isDarkMode);
-    localStorage.setItem("isDarkmode", JSON.stringify(!isDarkMode));
+  const [isBrowseOpen, setIsBrowseOpen] = useState(false);
+  const browseRef = useRef(null);
 
-    if (isDarkMode === true) {
-      document.body.classList.add("dark");
-    } else {
-      document.body.classList.remove("dark");
-    }
+  function toggleBrowse() {
+    setIsBrowseOpen(!isBrowseOpen);
   }
+
+  const handleBrowseOnMouseLeave = debounce(() => {
+    setIsBrowseOpen(false);
+    browseRef.current.blur();
+  }, 450);
+
+  const handleBrowseOnMouseEnter = () => {
+    setIsBrowseOpen(true);
+    handleBrowseOnMouseLeave.clear();
+  };
+
+  useEffect(() => {
+    isBrowseOpen
+      ? (browseRef.current.className = "nav-item open")
+      : (browseRef.current.className = "nav-item");
+  }, [isBrowseOpen]);
 
   return (
     <>
       <Header>
         <Logo />
-        <Nav />
+        <Nav onToggleBrowse={toggleBrowse} browseRef={browseRef} />
         <BentleyLogo />
         <ThemeIcon onClick={handleDarkModeToggle} />
+
+        {isBrowseOpen ? (
+          <SubMenu
+            onMouseLeave={handleBrowseOnMouseLeave}
+            onMouseEnter={handleBrowseOnMouseEnter}
+          ></SubMenu>
+        ) : (
+          <></>
+        )}
       </Header>
 
-      <main></main>
-      <footer></footer>
+      <div className="inner-grid">
+        <main>Main</main>
+        <footer></footer>
+      </div>
     </>
   );
 }
 
 export default App;
-
-function Header({ children }) {
-  return (
-    <>
-      <header>
-        <div className="container">{children}</div>
-      </header>
-    </>
-  );
-}
-
-function Nav() {
-  return (
-    <nav>
-      <ul>
-        <li>
-          <a href="#">Browse</a>
-        </li>
-        <li>
-          <a href="#">About</a>
-        </li>
-        <li>
-          <button className="btn" href="#">
-            BOOK A CONSULTATION
-          </button>
-        </li>
-      </ul>
-    </nav>
-  );
-}
