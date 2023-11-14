@@ -71,6 +71,10 @@
     var(--clr-primary-600)
   );
 
+  *::-webkit-scrollbar {
+    display: none;
+  }
+
   @media (min-width: 40em) {
     --fs-500: 2rem;
     --fs-700: 2.5rem;
@@ -120,6 +124,7 @@ a {
 h1,
 .h1 {
   font-size: var(--fs-900);
+  text-transform: uppercase;
 }
 
 a {
@@ -177,7 +182,6 @@ body {
 
   transition: 300ms;
 }
-
 /* --- --- --- */
 
 .container {
@@ -193,6 +197,9 @@ body {
 }
 
 header {
+  position: fixed;
+  width: 100%;
+
   display: flex;
   justify-content: center;
 
@@ -300,11 +307,18 @@ header {
 
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
-  /* background-color: #095082; */
+  background-color: none;
 
   & .left {
-    width: 36rem;
+    width: 32rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-l);
+  }
+
+  & .right {
     display: flex;
     flex-direction: column;
     gap: var(--gap-l);

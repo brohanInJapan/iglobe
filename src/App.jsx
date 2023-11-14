@@ -1,9 +1,16 @@
 import { useEffect, useRef, useState } from "react";
+import { debounce } from "debounce";
+
+import { Header, Nav, SubMenu } from "./Header";
+
 import Logo from "./assets/Logo";
 import BentleyLogo from "./assets/BentleyLogo";
 import ThemeIcon from "./assets/ThemeIcon";
-import { debounce } from "debounce";
-import { Header, Nav, SubMenu } from "./Header";
+import IconawesomeFacebookSquare from "./assets/IconawesomeFacebookSquare";
+import IconawesomeLinkedin from "./assets/IconawesomeLinkedin";
+import IconawesomeTwitterSquare from "./assets/IconawesomeTwitterSquare";
+import IconawesomeYoutube from "./assets/IconawesomeYoutube";
+import IconawesomeInstagram from "./assets/IconsimpleInstagram";
 
 function App() {
   const [isDarkMode, setIsDarkmode] = useState(function () {
@@ -73,6 +80,15 @@ function App() {
       <div className="inner-grid">
         <Main>
           <Hero />
+          <Hero />
+          <Hero />
+          <Hero />
+          <Hero />
+          <Hero />
+          <Hero />
+          <Hero />
+          <Hero />
+          <Hero />
         </Main>
         <footer></footer>
       </div>
@@ -94,6 +110,13 @@ function Hero() {
         <button className="btn" href="#">
           BOOK A CONSULTATION
         </button>
+      </div>
+      <div className="right">
+        <IconawesomeLinkedin />
+        <IconawesomeFacebookSquare />
+        <IconawesomeTwitterSquare />
+        <IconawesomeInstagram />
+        <IconawesomeYoutube />
       </div>
     </div>
   );

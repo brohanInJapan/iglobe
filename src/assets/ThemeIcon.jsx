@@ -2,8 +2,8 @@ const ThemeIcon = ({ fill = "var(--clr-secondary-200)", onClick }) => {
   return (
     <button className="nav-item" href="#" onClick={() => onClick()}>
       <svg
-        height="22.62"
-        width="22.62"
+        height="20"
+        width="20"
         viewBox="0 0 22.62 22.62"
         xmlns="http://www.w3.org/2000/svg"
       >
