@@ -7,7 +7,7 @@
   --fs-400: 0.875rem;
   --fs-500: 1.875rem;
   --fs-700: 2.25rem;
-  --fs-900: 3rem;
+  --fs-900: 6rem;
 
   --fw-200: 200;
   --fw-400: 400;
@@ -115,6 +115,11 @@ figure,
 a {
   margin: 0;
   padding: 0;
+}
+
+h1,
+.h1 {
+  font-size: var(--fs-900);
 }
 
 a {
@@ -290,9 +295,27 @@ header {
   transition: 3s;
 }
 
+.hero {
+  min-height: 32rem;
+
+  display: flex;
+  align-items: center;
+
+  /* background-color: #095082; */
+
+  & .left {
+    width: 36rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-l);
+  }
+}
+
 .btn {
   display: inline;
   cursor: pointer;
+
+  width: max-content;
 
   color: var(--clr-light-200);
   font-size: var(--fs-300);

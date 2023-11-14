@@ -71,7 +71,9 @@ function App() {
       </Header>
 
       <div className="inner-grid">
-        <main>Main</main>
+        <Main>
+          <Hero />
+        </Main>
         <footer></footer>
       </div>
     </>
@@ -79,3 +81,20 @@ function App() {
 }
 
 export default App;
+
+function Main({ children }) {
+  return <main className="container">{children}</main>;
+}
+
+function Hero() {
+  return (
+    <div className="hero">
+      <div className="left">
+        <h1>Transform your business with the Power of Data.</h1>
+        <button className="btn" href="#">
+          BOOK A CONSULTATION
+        </button>
+      </div>
+    </div>
+  );
+}
