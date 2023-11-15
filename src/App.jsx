@@ -83,15 +83,6 @@ function App() {
         <Main>
           <Hero />
           <TestSection>
-            <div>
-              <h2>Test</h2>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptatum, vitae quo ipsum illo dolores recusandae nulla.
-                Mollitia accusantium quasi neque eum autem vel alias?
-              </p>
-            </div>
-
             <Spline scene="https://prod.spline.design/rym97Oa0xiRhp8U8/scene.splinecode" />
           </TestSection>
           <Hero />

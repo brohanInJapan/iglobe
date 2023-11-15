@@ -144,6 +144,14 @@ img {
   border-radius: var(--br);
 }
 
+audio,
+canvas,
+progress,
+video {
+  vertical-align: baseline;
+  display: inline-block;
+}
+
 body.dark {
   --_highlight: var(--clr-light-200);
   --_shadow: var(--clr-dark-400);
@@ -382,11 +390,12 @@ header {
 
 .testAnim {
   display: grid;
-  grid-template-columns: 20rem 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content;
   align-items: center;
   column-gap: 6rem;
-  padding-inline: 6rem;
 
   & div > * + * {
     margin-top: 1rem;
   }
+}
