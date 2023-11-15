@@ -1,4 +1,4 @@
-const IconawesomeLinkedin = ({ fill = "var(--clr-secondary-200)" }) => {
+const IconawesomeLinkedin = ({ fill = "var(--clr-icon)" }) => {
   return (
     <a href="https://za.linkedin.com/company/theiglobegroup">
       <button className="nav-item">

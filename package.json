@@ -13,9 +13,18 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@react-three/drei": "^9.88.14",
+    "@react-three/fiber": "^8.15.11",
+    "@splinetool/loader": "^0.9.499",
+    "@splinetool/r3f-spline": "^1.0.2",
+    "@splinetool/react-spline": "^2.2.6",
+    "@splinetool/runtime": "^0.9.499",
+    "@types/three": "^0.158.2",
     "debounce": "^1.2.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "styled-components": "^6.1.1",
+    "three": "^0.158.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

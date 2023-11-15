@@ -1,4 +1,4 @@
-const IconsimpleInstagram = ({ fill = "var(--clr-secondary-200)" }) => {
+const IconsimpleInstagram = ({ fill = "var(--clr-icon)" }) => {
   return (
     <a href="https://www.instagram.com/theiglobegroup/">
       <button className="nav-item">

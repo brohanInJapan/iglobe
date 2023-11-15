@@ -1,4 +1,4 @@
-const ThemeIcon = ({ fill = "var(--clr-secondary-200)", onClick }) => {
+const ThemeIcon = ({ fill = "var(--clr-icon)", onClick }) => {
   return (
     <button className="nav-item" href="#" onClick={() => onClick()}>
       <svg

@@ -1,4 +1,4 @@
-const IconawesomeFacebookSquare = ({ fill = "var(--clr-secondary-200)" }) => {
+const IconawesomeFacebookSquare = ({ fill = "var(--clr-icon)" }) => {
   return (
     <a href="https://www.facebook.com/iglobesa/">
       <button className="nav-item">

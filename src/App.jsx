@@ -12,6 +12,8 @@ import IconawesomeTwitterSquare from "./assets/IconawesomeTwitterSquare";
 import IconawesomeYoutube from "./assets/IconawesomeYoutube";
 import IconawesomeInstagram from "./assets/IconsimpleInstagram";
 
+import Spline from "@splinetool/react-spline";
+
 function App() {
   const [isDarkMode, setIsDarkmode] = useState(function () {
     const storedValue = localStorage.getItem("isDarkmode");
@@ -80,14 +82,18 @@ function App() {
       <div className="inner-grid">
         <Main>
           <Hero />
-          <Hero />
-          <Hero />
-          <Hero />
-          <Hero />
-          <Hero />
-          <Hero />
-          <Hero />
-          <Hero />
+          <TestSection>
+            <div>
+              <h2>Test</h2>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Voluptatum, vitae quo ipsum illo dolores recusandae nulla.
+                Mollitia accusantium quasi neque eum autem vel alias?
+              </p>
+            </div>
+
+            <Spline scene="https://prod.spline.design/rym97Oa0xiRhp8U8/scene.splinecode" />
+          </TestSection>
           <Hero />
         </Main>
         <footer></footer>
@@ -104,20 +110,27 @@ function Main({ children }) {
 
 function Hero() {
   return (
-    <div className="hero">
-      <div className="left">
-        <h1>Transform your business with the Power of Data.</h1>
-        <button className="btn" href="#">
-          BOOK A CONSULTATION
-        </button>
+    <>
+      <div className="hero">
+        <div className="left">
+          <h1>Transform your business with the Power of Data.</h1>
+          <button className="btn" href="#">
+            BOOK A CONSULTATION
+          </button>
+        </div>
+
+        <div className="right">
+          <IconawesomeLinkedin />
+          <IconawesomeFacebookSquare />
+          <IconawesomeTwitterSquare />
+          <IconawesomeInstagram />
+          <IconawesomeYoutube />
+        </div>
       </div>
-      <div className="right">
-        <IconawesomeLinkedin />
-        <IconawesomeFacebookSquare />
-        <IconawesomeTwitterSquare />
-        <IconawesomeInstagram />
-        <IconawesomeYoutube />
-      </div>
-    </div>
+    </>
   );
+}
+
+function TestSection({ children }) {
+  return <div className="testAnim">{children}</div>;
 }

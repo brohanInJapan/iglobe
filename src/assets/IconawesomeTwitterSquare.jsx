@@ -1,4 +1,4 @@
-const IconawesomeTwitterSquare = ({ fill = "var(--clr-secondary-200)" }) => {
+const IconawesomeTwitterSquare = ({ fill = "var(--clr-icon)" }) => {
   return (
     <a href="https://twitter.com/iGlobeSystems">
       <button className="nav-item">

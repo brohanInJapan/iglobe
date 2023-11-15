@@ -1,4 +1,4 @@
-const IconawesomeYoutube = ({ fill = "var(--clr-secondary-200)" }) => {
+const IconawesomeYoutube = ({ fill = "var(--clr-icon)" }) => {
   return (
     <a href="https://www.youtube.com/@iGlobeGroup">
       <button className="nav-item">
