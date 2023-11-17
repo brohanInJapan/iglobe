@@ -327,9 +327,11 @@ header {
   align-items: center;
   justify-content: space-between;
 
+  min-height: 60svh;
+
   background-color: none;
 
-  margin-top: 12rem;
+  margin-top: 6rem;
 
   & .left {
     width: 48rem;
@@ -390,12 +392,13 @@ header {
 
 .testAnim {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: min-content;
   align-items: center;
-  column-gap: 6rem;
+}
 
-  & div > * + * {
-    margin-top: 1rem;
-  }
+.background {
+  position: absolute;
+  z-index: -999;
+
+  min-height: 100svh;
+  padding-left: 16rem;
 }
