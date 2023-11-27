@@ -264,6 +264,21 @@ header {
       margin-left: var(--gap-l);
     }
   }
+
+  @media (max-width: 64rem) {
+    & .header-container {
+      grid-template-columns: 10rem 1fr;
+      grid-template-rows: repeat(3, 4rem);
+      grid-template-areas:
+        "logo nav"
+        "bentley theme"
+        "sub-menu 0";
+      align-items: center;
+    }
+  }
+
+  @media (max-width: 30rem) {
+  }
 }
 
 .logo {
