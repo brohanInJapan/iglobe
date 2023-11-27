@@ -342,14 +342,14 @@ main {
   margin-top: 4rem;
   margin-inline: max(8vw, 50% - 102.5rem/2);
 
-  background-color: pink;
+  /* background-color: pink; */
 
   @media (max-width: 64rem) {
-    background-color: purple;
+    /* background-color: purple; */
   }
 
   @media (max-width: 30rem) {
-    background-color: orange;
+    /* background-color: orange; */
   }
 }
 
@@ -366,7 +366,6 @@ main {
 
   @media (max-width: 64rem) {
     align-items: start;
-    min-height: 40svh;
   }
 
   @media (max-width: 30rem) {
