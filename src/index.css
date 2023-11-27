@@ -7,7 +7,7 @@
   --fs-400: 0.875rem;
   --fs-500: 1.875rem;
   --fs-700: 2.25rem;
-  --fs-900: 6rem;
+  --fs-900: min(8rem, 8vw);
 
   --fw-200: 200;
   --fw-400: 400;
@@ -77,6 +77,24 @@
 
   *::-webkit-scrollbar {
     display: none;
+  }
+
+  @media (max-width: 64rem) {
+    --fs-200: 0.65rem;
+    --fs-300: 0.75rem;
+    --fs-400: 0.875rem;
+    --fs-500: 1.875rem;
+    --fs-700: 2.25rem;
+    --fs-900: 3.85rem;
+  }
+
+  @media (max-width: 30rem) {
+    --fs-200: 0.65rem;
+    --fs-300: 0.75rem;
+    --fs-400: 0.875rem;
+    --fs-500: 1.875rem;
+    --fs-700: 2.25rem;
+    --fs-900: 2rem;
   }
 }
 
@@ -152,6 +170,22 @@ video {
   display: inline-block;
 }
 
+body {
+  line-height: var(--lh-400);
+  font-family: var(--ff-sans);
+  font-size: var(--fs-400);
+
+  --_shadow: var(--clr-dark-400);
+  --_highlight: var(--clr-light-200);
+  --clr-icon: var(--clr-secondary-200);
+
+  color: var(--clr-secondary-200);
+
+  background: var(--clr-primary-400);
+
+  transition: 350ms;
+}
+
 body.dark {
   --_highlight: var(--clr-light-200);
   --_shadow: var(--clr-dark-400);
@@ -173,29 +207,7 @@ body.dark {
   );
 }
 
-body {
-  line-height: var(--lh-400);
-  font-family: var(--ff-sans);
-  font-size: var(--fs-400);
-
-  --_shadow: var(--clr-dark-400);
-  --_highlight: var(--clr-light-200);
-  --clr-icon: var(--clr-secondary-200);
-
-  color: var(--clr-secondary-200);
-
-  background: var(--clr-primary-400);
-  background: var(--gradient);
-
-  transition: 350ms;
-}
 /* --- --- --- */
-
-.container {
-  width: 100%;
-  max-width: 1640px;
-  padding-inline: 6rem;
-}
 
 .inner-grid {
   display: flex;
@@ -205,7 +217,7 @@ body {
 
 header {
   position: fixed;
-  z-index: 99;
+  top: 0;
   width: 100%;
 
   display: flex;
@@ -215,8 +227,11 @@ header {
   background: var(--gradient);
   box-shadow: var(--cast-shadow);
 
-  & .container {
+  & .header-container {
     height: 4rem;
+    width: 100%;
+    max-width: 102.5rem;
+    margin-inline: 8vw;
 
     display: grid;
     grid-template-columns: 10rem 1fr 8rem 3.5rem;
@@ -322,27 +337,39 @@ header {
   transition: 350ms;
 }
 
+main {
+  max-width: 102.5rem;
+  margin-top: 4rem;
+  margin-inline: max(8vw, 50% - 102.5rem/2);
+
+  background-color: pink;
+
+  @media (max-width: 64rem) {
+    background-color: purple;
+  }
+
+  @media (max-width: 30rem) {
+    background-color: orange;
+  }
+}
+
 .hero {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  flex-direction: column;
+  gap: var(--gap-l);
 
   min-height: 60svh;
 
   background-color: none;
 
-  margin-top: 6rem;
-
-  & .left {
-    width: 48rem;
-    display: flex;
-    flex-direction: column;
-    gap: var(--gap-l);
+  @media (max-width: 64rem) {
+    align-items: start;
+    min-height: 40svh;
   }
 
-  & .right {
-    display: flex;
-    flex-direction: column;
+  @media (max-width: 30rem) {
   }
 }
 

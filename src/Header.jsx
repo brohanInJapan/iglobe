@@ -4,11 +4,12 @@ export function Header({ children }) {
   return (
     <>
       <header>
-        <div className="container">{children}</div>
+        <div className="header-container">{children}</div>
       </header>
     </>
   );
 }
+
 export function Nav({ onToggleBrowse, browseRef }) {
   return (
     <nav>
@@ -36,6 +37,7 @@ export function Nav({ onToggleBrowse, browseRef }) {
     </nav>
   );
 }
+
 export function SubMenu({ onMouseLeave, onMouseEnter }) {
   const ref = useRef(null);
 
